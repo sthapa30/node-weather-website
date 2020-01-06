@@ -4,6 +4,7 @@ const path = require('path')
 
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 
 const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
@@ -133,6 +134,6 @@ app.get('/about',(req,res)=>{
 // port number: AT this time the server is running only in our machine so, port number 
 //               allocated to run this server is 3000. Later it can be changed
 // callback:    It shows that our server is running
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port' + port +'.')
 })
